@@ -56,7 +56,7 @@
 	<c:import url="../temp/header.jsp"></c:import>
 	<div id="nav01">
         <a href="/notice/list">공지사항</a>
-        <a href="https://www.notion.so/d87dd9eefdde460f90a773b47fa833f3?pvs=4" target="_blank">자주찾는 질문</a>
+        <a href="https://nonchalant-session-026.notion.site/bfda421401da41cb9d2d9622a99c8584?pvs=4" target="_blank">자주찾는 질문</a>
     </div>
     <div id="nav02">
     	<div id="title">
