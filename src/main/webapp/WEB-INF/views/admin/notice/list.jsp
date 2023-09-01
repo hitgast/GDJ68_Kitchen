@@ -28,11 +28,11 @@
             margin: auto;
         }
         .contents{
-        	height: 30px;
-        	line-height: 30px; 
+        	line-height: 40px; 
             border-bottom: 1px solid black;
             padding-left: 30px;
             position: relative;
+            font-size: 17px;
         }
         .conTitle{
         	font-weight: bold;

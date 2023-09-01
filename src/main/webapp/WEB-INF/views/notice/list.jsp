@@ -28,11 +28,11 @@
             margin: auto;
         }
         .contents{
-        	height: 30px;
-        	line-height: 30px; 
+        	line-height: 40px; 
             border-bottom: 1px solid black;
             padding-left: 53px;
             position: relative;
+            font-size: 17px;
         }
         .conTitle{
         	font-weight: bold;
@@ -66,6 +66,11 @@
         #nav03 a{
         	margin-right: 5px;
         }
+        
+        .detailHidden{
+        	display: none;
+        	padding: 30px 0;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +102,8 @@
 	            <span>${kto.noticeTitle}</span>
 	            <span>${kto.noticeDate}</span>
 	            <input type="hidden" id="noticeNumVal" value="${kto.noticeNum}">
+	            
+	            <div class="detailHidden"><pre>${kto.noticeContents}</pre></div>
         	</div>
 		</c:forEach>
     </div>
@@ -128,8 +135,16 @@
 		});
 	 	
 	 	// contents div 클릭시
+ 		let result = true;
 	 	$(".conList").click(function() {
-			$(location).attr("href", "detail?noticeNum=" + $(this).find("#noticeNumVal").val());
+			//$(location).attr("href", "detail?noticeNum=" + $(this).find("#noticeNumVal").val());
+			if(result){
+				$(this).find(".detailHidden").css("display", "block");
+				result = false;
+			} else{
+				$(this).find(".detailHidden").css("display", "none");
+				result = true;
+			}
 		});
     </script>
 </body>
