@@ -350,7 +350,7 @@ public class MemberController {
 	public String getInfo(MemberDTO memDTO, HttpSession session) throws Exception{
 		memDTO.setPassword("1234");
 		memDTO.setId("qwe");
-		memDTO = memService.getCheckInfo(memDTO);
+		memDTO = memberService.getCheckInfo(memDTO);
 		
 		session.setAttribute("kto", memDTO);
 		
@@ -361,7 +361,7 @@ public class MemberController {
 	public String checkInfo(MemberDTO memDTO, HttpSession session, Model model) throws Exception {
 		memDTO = (MemberDTO)session.getAttribute("kto");
 		
-		memDTO = memService.getCheckInfo(memDTO);
+		memDTO = memberService.getCheckInfo(memDTO);
 		
 		model.addAttribute("kto", memDTO);
 		
@@ -375,14 +375,14 @@ public class MemberController {
 	}
 	@PostMapping("memberUpdate")
 	public String setUpdate(MemberDTO memDTO) throws Exception {
-		int result = memService.setUpdate(memDTO);
+		int result = memberService.setUpdate(memDTO);
 		
 		return "redirect:/mypage/info";
 	}
 	
 	@PostMapping("delete")
 	public String setDelete(MemberDTO memDTO, HttpSession session) throws Exception{
-		memService.setDelete(memDTO);
+		memberService.setDelete(memDTO);
 		session.invalidate();
 		System.out.println(memDTO.getId());
 		
