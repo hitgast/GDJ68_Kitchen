@@ -25,7 +25,7 @@ public class MemberController {
 	
 	
 		
-	
+	// 예약 정보
 	@GetMapping("onGoing")
 	public String getOnGoing() throws Exception{
 		
@@ -50,6 +50,14 @@ public class MemberController {
 		return "/mypage/productDetail";
 	}
 	
+	// My 활동
+	@GetMapping("QnAList")
+	public String getQnAList() {
+		
+		return "/mypage/QnAList";
+	}
+	
+	// My 정보
 	@GetMapping("info")
 	public String getInfo(MemberDTO memDTO, HttpSession session) throws Exception{
 		memDTO.setPassword("1234");
